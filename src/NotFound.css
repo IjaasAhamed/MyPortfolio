@@ -1,0 +1,20 @@
+/* NotFound.css */
+
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .not-found-content {
+    text-align: center;
+  }
+  
+  .astronaut-image {
+    width: 200px;
+    margin-top: 20px;
+    filter: drop-shadow(-6px 5px 8px rgba(0, 0, 0, 0.5));
+}
+  
