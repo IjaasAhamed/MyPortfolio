@@ -22,8 +22,8 @@ import skillImg8 from './img/mysql.webp';
 import stina from './img/stina.webp';
 import finance from './img/finance.webp';
 import Typewriter from './Typewriter.js';
-import Fade from 'react-reveal/Fade';
-import Zoom from 'react-reveal/Zoom';
+import { Fade } from 'react-awesome-reveal';
+
 // import NotFound from './NotFound';
 
 function App() {
@@ -118,12 +118,12 @@ function App() {
   </div>
 </div>
 
-        <Fade>
+
           <div className="image-container col-lg-4 col-sm-4">
           <span className="colored-circle"></span>
           <img src={myImg} alt='Ijaas Ahamed' className="image" />
         </div>
-        </Fade>
+
         <div className='col-lg-4 col-sm-4 px-5 introhde'>
           <h5 className='txtclrgrn'>INTRODUCTION</h5>
           <Typewriter />
@@ -135,7 +135,6 @@ function App() {
       </main>
 
       <div className='aboutsec col-lg-12 col-sm-12' id="aboutsec">
-        <Zoom>
   <h1 className='txtclr text-center py-5 bigfn spclfn'>About</h1>
   <div className='d-flex flex-wrap justify-content-center align-items-center'>
     <div className='col-lg-6 col-sm-12'>
@@ -154,11 +153,9 @@ function App() {
       Download CV
     </a>
   </div>
-  </Zoom>
 </div>
 
 <div className='worksec col-lg-12 col-sm-12' id="projectsec">
-  <Zoom>
   <div className='col-lg-12 col-sm-12'>
     <h1 className='txtclr text-center py-5 bigfn spclfn'>My Recent Work</h1>
   </div>
@@ -182,12 +179,10 @@ function App() {
       </div>
     </div>
   </div>
-  </Zoom>
 </div>
 
 
       <div className='skillsec col-lg-12 col-sm-12' id="skillsec">
-        <Zoom>
         <h1 className='txtclr text-center py-5 bigfn spclfn'>Skills</h1>
         <div className='d1-flex flex-wrap mx-5 py-4'>
         <div className='text-center txtclr col-lg-3 col-sm-3 p-4 hov'>
@@ -227,10 +222,9 @@ function App() {
         <h5 className='pt-2 fs-6'>MySql</h5>
         </div>
         </div>
-        </Zoom>
       </div>
     <div className='contactsec col-lg-12 col-sm-12 py-5' id="contactsec">
-      <Fade bottom duration={1000} delay={300}>
+      <Fade cascade>
       <h1 className='txtclr text-center pt-5 bigfn spclfn'>Let's Talk</h1>
       <p className='txtclr text-center fs-5'>Feel Free to Reach Me</p>
       <form action="https://formsubmit.co/ijaas.mindtek@gmail.com" method="POST">
