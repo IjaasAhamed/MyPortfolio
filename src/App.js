@@ -173,7 +173,7 @@ function App() {
   </div>
   <div className='pb-5 text-center'>
     <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='btntrans mx-4'>Let's Talk</ScrollLink>
-    <a href="https://drive.google.com/file/d/16pZp7boCpjMHEYWCKrzYC_TasFRZj1xl/view" className='btntrans'>
+    <a href="https://drive.google.com/file/d/16vUMqMRZLtt8fTS8pUyXerdNnczS0rF0/view" className='btntrans'>
       Download CV
     </a>
   </div>
