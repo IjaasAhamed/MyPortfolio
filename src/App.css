@@ -1,7 +1,22 @@
-
 /* custom */
-.gfnt{
+.gfnt {
   font-family: 'Poppins', sans-serif;
+}
+
+/* Custom Scroll bar */
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #1a1919;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #45a049;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
 .header {
@@ -18,15 +33,18 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #000000e3; /* Adjust the background color as needed */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  background-color: #000000e3;
+  /* Adjust the background color as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Add a subtle box shadow */
   z-index: 1000;
   padding: 20px 30px;
   transition: 0.4s ease;
 }
 
 .logo {
-  width: 90px; /* Adjust the width as needed */
+  width: 90px;
+  /* Adjust the width as needed */
 }
 
 nav {
@@ -40,13 +58,16 @@ nav {
 }
 
 .project {
-  width: 48%; /* Adjust as needed based on your design */
+  width: 48%;
+  /* Adjust as needed based on your design */
 }
 
 .button-ul.active-link {
-  color: #45a049; /* Change the color to the desired active color */
-  
+  color: #45a049;
+  /* Change the color to the desired active color */
+
 }
+
 .button-ul {
   position: relative;
   margin: 0 10px;
@@ -77,6 +98,7 @@ nav {
   from {
     transform: scaleX(0);
   }
+
   to {
     transform: scaleX(1);
   }
@@ -85,8 +107,10 @@ nav {
 .nav-line {
   border: none;
   border-left: 2px solid #a0a0a0;
-  height: 30px; /* Adjust the height as needed */
-  margin-left: 8px; /* Adjust the margin as needed */
+  height: 30px;
+  /* Adjust the height as needed */
+  margin-left: 8px;
+  /* Adjust the margin as needed */
 }
 
 .social-logo {
@@ -101,29 +125,33 @@ nav {
   color: #45a049 !important;
 }
 
-.ulinee{
+.ulinee {
   border: 2px solid #45a049;
-  width: 80px; /* Adjust the height as needed */
+  width: 80px;
+  /* Adjust the height as needed */
   margin-top: 20px;
 }
 
-.divpad{
+.divpad {
   padding: 60px;
 }
 
-.btnlinks{
+.btnlinks {
   cursor: pointer;
   color: #fff;
-  
+
 }
-.btnlinks:hover{
+
+.btnlinks:hover {
   color: #45a049;
 }
+
 /* Mobile View sidebar */
 
 /* Hamburger icon styles */
 .hamburger-icon {
-  display: none; /* Hide by default on larger screens */
+  display: none;
+  /* Hide by default on larger screens */
   cursor: pointer;
 }
 
@@ -146,9 +174,11 @@ nav {
 .open .line:last-child {
   transform: rotate(50deg) translate(-7px, -6px);
 }
+
 /* Sidebar styles */
 .sidebar {
-  display: none; /* Hide by default on larger screens */
+  display: none;
+  /* Hide by default on larger screens */
 }
 
 /* Show hamburger icon on smaller screens */
@@ -161,15 +191,18 @@ nav {
     background-color: #2d2b2b;
     transition: 0.4s ease;
   }
+
   .hamburger-icon {
     display: block;
   }
 
-  .line{
+  .line {
     background-color: #fff;
   }
+
   .nav-line {
-    display: none; /* Hide horizontal line on smaller screens */
+    display: none;
+    /* Hide horizontal line on smaller screens */
   }
 
   /* Hide the main content when the sidebar is open */
@@ -211,9 +244,10 @@ nav {
     left: 0;
   }
 
-  .mobhde{
+  .mobhde {
     display: none;
   }
+
   .social-logo {
     position: relative;
     padding: 20px 15px;
@@ -224,34 +258,40 @@ nav {
     text-align: center;
     margin: 15px 15px;
   }
-  
+
   .social-logo:hover {
     color: #45a049 !important;
   }
-  
-  .logoend{
+
+  .logoend {
     margin-left: auto;
   }
-  .mgxy{
+
+  .mgxy {
     margin: 30px;
   }
-  .divpad{
+
+  .divpad {
     padding: 30px;
   }
-  .center-content{
+
+  .center-content {
     padding: 0px 13px;
   }
-  .introhde{
+
+  .introhde {
     display: none;
   }
-  .nmehde{
+
+  .nmehde {
     display: none;
   }
-  
+
   .project {
-    width: 100%; /* Adjust as needed based on your design */
+    width: 100%;
+    /* Adjust as needed based on your design */
   }
-  
+
   .colored-circle {
     position: relative !important;
     width: 250px !important;
@@ -264,69 +304,87 @@ nav {
     transition: 0.4s ease !important;
 
   }
-  
+
   .image-container {
     position: relative !important;
-    width: 300px !important; /* Adjust the width as needed */
-    height: 600px !important; /* Adjust the height as needed */
-    overflow: hidden !important; /* Ensure the image stays within the container */
+    width: 300px !important;
+    /* Adjust the width as needed */
+    height: 600px !important;
+    /* Adjust the height as needed */
+    overflow: hidden !important;
+    /* Ensure the image stays within the container */
     transition: 0.4s ease !important;
 
   }
-  
+
   .image {
-    width: 500px !important; /* Adjust the width as needed */
-    height: auto !important; /* Maintain aspect ratio */
+    width: 500px !important;
+    /* Adjust the width as needed */
+    height: auto !important;
+    /* Maintain aspect ratio */
     position: absolute !important;
     top: 50% !important;
     left: 77% !important;
     transform: translate(-50%, -50%) !important;
-    z-index: 0 !important; /* Place the image above the circle */
+    z-index: 0 !important;
+    /* Place the image above the circle */
     transition: 0.4s ease !important;
 
   }
-  .bigfn{
+
+  .bigfn {
     font-size: 40px !important;
     font-weight: bolder;
   }
+
   .center-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Adjust this if needed */
+    height: 100vh;
+    /* Adjust this if needed */
     position: absolute !important;
     top: 10% !important;
     left: 7% !important;
-    z-index: 1 !important; 
+    z-index: 1 !important;
     transition: 0.4s ease !important;
   }
 }
 
-main{
-background-color: #2d2b2b;
-width: 100%;
+main {
+  background-color: #2d2b2b;
+  width: 100%;
 }
 
-.txtclr{
+.txtclr {
   color: white;
   text-align: left;
 }
-.txtclrgrn{
+
+.txtclrgrn {
   color: #45a049;
   text-align: left;
 }
-.period{
+
+.period {
   color: #45a049;
   font-size: 60px;
 }
 
 @keyframes slideIn {
-  0% { opacity: 0; transform: translateX(-30px); }
-  100% { opacity: 1; transform: translateX(0); }
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.txtanimate{
+.txtanimate {
   animation: slideIn 1s ease-in-out;
 }
 
@@ -341,7 +399,8 @@ width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Adjust this if needed */
+  height: 100vh;
+  /* Adjust this if needed */
 }
 
 
@@ -349,7 +408,7 @@ width: 100%;
   text-align: left;
 }
 
-.btntrans{
+.btntrans {
   border: 2px solid #45a049;
   padding: 13px 20px;
   color: #45a049;
@@ -361,7 +420,7 @@ width: 100%;
   text-decoration: none;
 }
 
-.btntrans:hover{
+.btntrans:hover {
   border: 2px solid #45a049;
   color: black;
   background-color: #45a049;
@@ -376,7 +435,8 @@ width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Set the height of the container as needed */
+  height: 100vh;
+  /* Set the height of the container as needed */
 }
 
 .colored-circle {
@@ -390,88 +450,100 @@ width: 100%;
 
 .image-container {
   position: relative;
-  width: 350px; /* Adjust the width as needed */
-  height: 600px; /* Adjust the height as needed */
-  overflow: hidden; /* Ensure the image stays within the container */
+  width: 350px;
+  /* Adjust the width as needed */
+  height: 600px;
+  /* Adjust the height as needed */
+  overflow: hidden;
+  /* Ensure the image stays within the container */
 }
 
 .image {
-  width: 500px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 500px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1; /* Place the image above the circle */
+  z-index: 1;
+  /* Place the image above the circle */
 }
 
-.aboutsec{
+.aboutsec {
   background-color: #262626;
   padding: 70px 0px 70px 0px;
 }
 
-.abtimg{
+.abtimg {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 400px;
-  margin:0 auto;
+  margin: 0 auto;
 }
-.abttxt{
+
+.abttxt {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: larger;
 }
 
-.worksec{
+.worksec {
   background-color: #2d2b2b;
   padding: 70px 0px 70px 0px;
 }
 
-.projectImg{
+.projectImg {
   width: 100%;
   border-radius: 5px;
 }
 
-.skillsec{
+.skillsec {
   background-color: #262626;
   padding: 70px 0px 70px 0px;
 }
 
-.skillImg{
+.skillImg {
   width: 35px;
   margin: 0px 10px;
 }
 
 .hov:hover h1,
 .hov:hover img {
-  transform: translateY(-5px); /* Adjust the value as needed */
-  transition: transform 0.3s ease-out; /* Adjust the transition duration and timing function as needed */
+  transform: translateY(-5px);
+  /* Adjust the value as needed */
+  transition: transform 0.3s ease-out;
+  /* Adjust the transition duration and timing function as needed */
 }
 
 .hov h1,
 .hov img {
-  transition: transform 0.3s ease-out; /* Include this transition for smooth animation even when not hovered */
+  transition: transform 0.3s ease-out;
+  /* Include this transition for smooth animation even when not hovered */
 }
 
 .d1-flex {
-  display: flex!important;
+  display: flex !important;
   justify-content: center;
 }
 
-.bigfn{
+.bigfn {
   font-size: 50px;
   font-weight: bolder;
 }
 
-.spclfn{
+.spclfn {
   font-family: 'Inconsolata', Consolas, monospace;
 }
-.spclfn1{
+
+.spclfn1 {
   font-family: 'Poppins', sans-serif;
 }
-.contactsec{
+
+.contactsec {
   background: url('img/contact.webp') center/cover no-repeat;
 }
 
@@ -511,26 +583,31 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: white; /* Change the placeholder text color as needed */
+  color: white;
+  /* Change the placeholder text color as needed */
 }
 
 input:focus,
 textarea:focus {
-  outline: none; /* Remove default focus outline */
-  border-color: #4CAF50; /* Change border color on focus */
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add a subtle box shadow on focus */
+  outline: none;
+  /* Remove default focus outline */
+  border-color: #4CAF50;
+  /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  /* Add a subtle box shadow on focus */
   background-color: #4CAF50;
 }
 
-.inptxt{
+.inptxt {
   margin: 8px 0px;
 }
 
-footer{
+footer {
   background-color: #262626;
   padding: 30px;
 }
-.logofoot{
+
+.logofoot {
   width: 80px;
 }
 
