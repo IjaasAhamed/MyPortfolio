@@ -22,6 +22,7 @@ import skillImg8 from './img/mysql.webp';
 import stina from './img/stina.webp';
 import finance from './img/finance.webp';
 import Kidzee from './img/kidzee.png';
+import alif from './img/alif.jpeg';
 import Typewriter from './Typewriter.js';
 import Loader from './Loader';
 import { Fade, Zoom } from 'react-awesome-reveal';
@@ -198,7 +199,7 @@ function App() {
           </div>
           <div className='pb-5 text-center'>
             <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='btntrans mx-4'>Let's Talk</ScrollLink>
-            <a href="https://drive.google.com/file/d/16vUMqMRZLtt8fTS8pUyXerdNnczS0rF0/view" className='btntrans'>
+            <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1FZKDnfBNiMgsElwMOKspknaqiU26GG-q/view" className='btntrans'>
               Download CV
             </a>
           </div>
@@ -234,6 +235,16 @@ function App() {
                 <img src={Kidzee} alt='Project 2' className='projectImg img-fluid' />
                 <h1 className='txtclr my-4 bigfn spclfn1'>School Website</h1>
                 <p className='txtclr'>This school website serves as a comprehensive platform, featuring essential pages such as admission for enrollment, franchise details, a convenient locate us page, Pentemind information, and a dedicated Programmes page offering a range of educational options, including Playgroup, Nursery, Kindergarten, Teacher Training Programme, and Daycare services.</p>
+                {/* <Link to="/notfound">
+              <button className='btntrans mb-5'>View Project</button>
+            </Link> */}
+              </div>
+            </div>
+            <div className='project col-lg-6 col-sm-12 mb-4'>
+              <div className='divpad'>
+                <img src={alif} alt='Project 2' className='projectImg img-fluid' />
+                <h1 className='txtclr my-4 bigfn spclfn1'>Catering Website</h1>
+                <p className='txtclr'>This catering website serves as a concise yet comprehensive platform, featuring essential pages such as an About Us section to learn more about our culinary journey, a Menu page showcasing our delectable offerings, a Contact Us page for inquiries and feedback, and a convenient Book Now option to seamlessly plan your events with Alif Caters.</p>
                 {/* <Link to="/notfound">
               <button className='btntrans mb-5'>View Project</button>
             </Link> */}
