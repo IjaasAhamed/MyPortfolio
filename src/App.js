@@ -157,9 +157,9 @@ function App() {
               <ScrollLink to="skillsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar}>Skills</ScrollLink>
               <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar}>Contact</ScrollLink>
               <hr className="nav-line" />
-              <span className='social-logo'><IoMail /></span>
-              <span className='social-logo'><FaLinkedinIn /></span>
-              <span className='social-logo'><FaGithub /></span>
+              <span className='social-logo' onClick={handleClick}><IoMail /></span>
+              <span className='social-logo'><a href="https://in.linkedin.com/in/ijaas-ahamed" target="_blank" rel="noopener noreferrer" className='p-0'><FaLinkedinIn /></a></span>
+              <span className='social-logo'><a href="https://github.com/IjaasAhamed" target="_blank" rel="noopener noreferrer" className='p-0'><FaGithub /></a></span>
             </nav>
           </header>
           <main id="homesec">
