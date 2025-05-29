@@ -221,7 +221,7 @@ function App() {
                   <img src={abtImg} alt="About" className='abtimg img-fluid' />
                 </div>
                 <div className='col-lg-6 col-sm-12 mgxy'>
-                  <p className='txtclr abttxt m-5'>
+                  <p className='txtclr abttxt'>
                     I'm a self-taught Web developer with the ability to learn and collaborate in rapidly changing environments and compositions. I am very interested in web development and have learned HTML, CSS, JavaScript, Bootstrap, PHP, React.js, Node.js, MySQL. My projects boosted my interest in web development as a full-time career option.<br /><br />
                     I am also inclined towards creative activities such as web designing and public speaking. I have always been an active student in school and college, participating in many cultural events during my school and college days.
                   </p>
@@ -369,7 +369,7 @@ function App() {
           <div className='skillsec col-lg-12 col-sm-12' id="skillsec">
             <Zoom cascade triggerOnce='true' >
               <h1 className='txtclr text-center py-5 bigfn spclfn'>Skills</h1>
-              <div className='d1-flex flex-wrap mx-5 py-4'>
+              <div className='d1-flex flex-wrap skillswrapper py-4'>
                 <div className='text-center txtclr col-lg-3 col-sm-3 p-4 hov'>
                   <img src={skillImg} alt='Html' className='skillImg' loading='lazy' />
                   <h5 className='pt-2 fs-6'>Html</h5>
