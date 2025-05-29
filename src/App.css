@@ -25,7 +25,7 @@
   align-items: center;
   padding: 60px;
   background-color: #2d2b2b;
-  transition: 0.4s ease;
+  transition: all 0.4s ease-in-out;
 }
 
 .sticky-header {
@@ -34,9 +34,7 @@
   left: 0;
   right: 0;
   background-color: #232121e3;
-  /* Adjust the background color as needed */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* Add a subtle box shadow */
   z-index: 1000;
   padding: 20px 30px;
   transition: 0.4s ease;
@@ -44,7 +42,6 @@
 
 .logo {
   width: 90px;
-  /* Adjust the width as needed */
 }
 
 nav {
@@ -59,12 +56,10 @@ nav {
 
 .project {
   width: 48%;
-  /* Adjust as needed based on your design */
 }
 
 .button-ul.active-link {
   color: #45a049;
-  /* Change the color to the desired active color */
 
 }
 
@@ -108,9 +103,7 @@ nav {
   border: none;
   border-left: 2px solid #a0a0a0;
   height: 30px;
-  /* Adjust the height as needed */
   margin-left: 8px;
-  /* Adjust the margin as needed */
 }
 
 .social-logo {
@@ -128,7 +121,6 @@ nav {
 .ulinee {
   border: 2px solid #45a049;
   width: 80px;
-  /* Adjust the height as needed */
   margin-top: 20px;
 }
 
@@ -151,7 +143,6 @@ nav {
 /* Hamburger icon styles */
 .hamburger-icon {
   display: none;
-  /* Hide by default on larger screens */
   cursor: pointer;
 }
 
@@ -178,7 +169,6 @@ nav {
 /* Sidebar styles */
 .sidebar {
   display: none;
-  /* Hide by default on larger screens */
 }
 
 /* Show hamburger icon on smaller screens */
@@ -210,6 +200,11 @@ nav {
     overflow: hidden;
   }
 
+  .ulinee {
+  border: 2px solid #45a049;
+  width: 80%;
+  margin: 0px auto;
+}
   /* Show sidebar on smaller screens */
   .sidebar {
     display: block;
@@ -219,7 +214,7 @@ nav {
     width: 250px;
     height: 100%;
     background-color: #000000e3;
-    z-index: 1;
+    z-index: 10;
     padding-top: 60px;
     transition: 0.5s;
     overflow-x: hidden;
@@ -289,17 +284,14 @@ nav {
 
   .project {
     width: 100%;
-    /* Adjust as needed based on your design */
   }
 
   .colored-circle {
     position: relative !important;
-    width: 250px !important;
-    height: 250px !important;
+    width: 300px !important;
+    height: 300px !important;
     border-radius: 50% !important;
     background-color: #45a0494f !important;
-    margin-left: 119px !important;
-    margin-top: 135px !important;
     display: inline-block !important;
     transition: 0.4s ease !important;
 
@@ -307,27 +299,20 @@ nav {
 
   .image-container {
     position: relative !important;
-    width: 300px !important;
-    /* Adjust the width as needed */
-    height: 600px !important;
-    /* Adjust the height as needed */
+    width: 100% !important;
+    height: 590px !important;
     overflow: hidden !important;
-    /* Ensure the image stays within the container */
     transition: 0.4s ease !important;
-
   }
 
   .image {
-    width: 500px !important;
-    /* Adjust the width as needed */
+    width: 475px !important;
     height: auto !important;
-    /* Maintain aspect ratio */
     position: absolute !important;
     top: 50% !important;
-    left: 77% !important;
+    left: 50% !important;
     transform: translate(-50%, -50%) !important;
     z-index: 0 !important;
-    /* Place the image above the circle */
     transition: 0.4s ease !important;
 
   }
@@ -337,24 +322,66 @@ nav {
     font-weight: bolder;
   }
 
+  .txtclr1{
+    color: #ffffff;
+  }
+  .center-container {
+    display: none !important;
+  }
+
   .center-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    /* Adjust this if needed */
-    position: absolute !important;
+    /* height: 100vh; */
+    /* position: absolute !important;
     top: 10% !important;
-    left: 7% !important;
+    left: 7% !important; */
     z-index: 1 !important;
     transition: 0.4s ease !important;
+  }
+
+.btn-container {
+  text-align: center !important;
+}
+
+  .mobhd {
+    display: block !important;
+  }
+
+  .mobviwhde{
+    display: none !important;
+  }
+  
+  .footerflex{
+  display: block !important;
+}
+.footerflex > * {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+}
+
+@media (min-width: 768px) {
+  .image-wrapper:hover {
+    filter: drop-shadow(0px 2px 30px rgba(11, 197, 17, 0.2));
+    transform: scale(1.03);
   }
 }
 
 main {
   background-color: #2d2b2b;
   width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobhd {
+  display: none;
+}
+
+.mobviwhde{
+  display: block;
 }
 
 .txtclr {
@@ -399,8 +426,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  /* Adjust this if needed */
+  /* height: 100vh; */
 }
 
 
@@ -426,9 +452,40 @@ main {
   background-color: #45a049;
 }
 
-.center-container {
-  display: flex;
-  align-items: center;
+.btntransproj {
+  border: 2px solid #45a049;
+  padding: 13px 31px;
+  color: #45a049;
+  background-color: transparent;
+  transition: 0.3s ease;
+  font-weight: 550;
+  letter-spacing: 1px;
+  font-size: 15px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btntransproj::after {
+  content: " →";
+  position: absolute;
+  opacity: 0;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  color: #000;
+}
+
+.btntransproj:hover {
+  background-color: #45a049;
+  color: black;
+}
+
+.btntransproj:hover::after {
+  opacity: 1;
+  right: 10px;
 }
 
 .colored-circle-container {
@@ -436,7 +493,6 @@ main {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* Set the height of the container as needed */
 }
 
 .colored-circle {
@@ -451,24 +507,18 @@ main {
 .image-container {
   position: relative;
   width: 350px;
-  /* Adjust the width as needed */
   height: 600px;
-  /* Adjust the height as needed */
   overflow: hidden;
-  /* Ensure the image stays within the container */
 }
 
 .image {
   width: 500px;
-  /* Adjust the width as needed */
   height: auto;
-  /* Maintain aspect ratio */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  /* Place the image above the circle */
 }
 
 .aboutsec {
@@ -500,6 +550,45 @@ main {
   width: 100%;
   height: auto;
   border-radius: 5px;
+  display: block;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Colored Blur Overlay */
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #000000e3;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.image-wrapper:hover .image-overlay {
+  opacity: 1;
+}
+
+/* Buttons Overlay */
+.btn-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.image-wrapper:hover .btn-overlay {
+  opacity: 1;
 }
 
 .skillsec {
@@ -515,15 +604,12 @@ main {
 .hov:hover h1,
 .hov:hover img {
   transform: translateY(-5px);
-  /* Adjust the value as needed */
   transition: transform 0.3s ease-out;
-  /* Adjust the transition duration and timing function as needed */
 }
 
 .hov h1,
 .hov img {
   transition: transform 0.3s ease-out;
-  /* Include this transition for smooth animation even when not hovered */
 }
 
 .d1-flex {
@@ -585,17 +671,13 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   color: white;
-  /* Change the placeholder text color as needed */
 }
 
 input:focus,
 textarea:focus {
   outline: none;
-  /* Remove default focus outline */
   border-color: #4CAF50;
-  /* Change border color on focus */
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-  /* Add a subtle box shadow on focus */
   background-color: #4CAF50;
 }
 
@@ -606,6 +688,12 @@ textarea:focus {
 footer {
   background-color: #262626;
   padding: 30px;
+}
+
+.footerflex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logofoot {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import './App.css';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { IoMail } from "react-icons/io5";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -36,21 +36,20 @@ import { Fade, Zoom } from 'react-awesome-reveal';
 function App() {
 
   // Loading screen
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    return sessionStorage.getItem('myPortfolioLoaded') !== 'true';
+  });
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+    if (loading) {
+      const timer = setTimeout(() => {
         setLoading(false);
-      }
-      catch (error) {
-        console.error('Error Fetching Data:', error);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+        sessionStorage.setItem('myPortfolioLoaded', 'true');
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
 
 
   const [showStickyHeader, setShowStickyHeader] = useState(false);
@@ -62,19 +61,22 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setShowStickyHeader(true);
+      if (window.innerWidth > 768) {
+        setShowStickyHeader(window.scrollY > 0);
       } else {
         setShowStickyHeader(false);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
   }, []);
+
 
   useEffect(() => {
     const imageUrls = [
@@ -149,11 +151,11 @@ function App() {
 
             {/* Sidebar for mobile view */}
             <nav className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-              <ScrollLink to="homesec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link">Home</ScrollLink>
-              <ScrollLink to="aboutsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link">About</ScrollLink>
-              <ScrollLink to="projectsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" >Projects</ScrollLink>
-              <ScrollLink to="skillsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link">Skills</ScrollLink>
-              <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link">Contact</ScrollLink>
+              <ScrollLink to="homesec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar}>Home</ScrollLink>
+              <ScrollLink to="aboutsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar}>About</ScrollLink>
+              <ScrollLink to="projectsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar} >Projects</ScrollLink>
+              <ScrollLink to="skillsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar}>Skills</ScrollLink>
+              <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar}>Contact</ScrollLink>
               <hr className="nav-line" />
               <span className='social-logo'><IoMail /></span>
               <span className='social-logo'><FaLinkedinIn /></span>
@@ -161,12 +163,13 @@ function App() {
             </nav>
           </header>
           <main id="homesec">
+            {/* Desktop View */}
             <div className='center-container col-lg-12 col-sm-12' style={{ height: '600px' }}>
               <div className='center-content text-center col-lg-4 col-sm-4'>
                 <div className='text-left'>
                   <h1 className='txtclr bigfn txtanimate smfont'>Ijaas<br></br> Ahamed<span className='period'>.</span></h1>
                   <div className='ulinee'></div>
-                  <p className='txtclr my-4 btnlinks'><a href="https://in.linkedin.com/in/ijaas-ahamed" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer"><span className='btnlinks'> Linkedin |</span></a><a href="https://github.com/IjaasAhamed" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer"><span className='btnlinks'> Github |</span></a><a href="https://www.instagram.com/ijaas_ahamed___" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer"><span className='btnlinks'> Instagram</span></a></p>
+                  <p className='txtclr my-4 btnlinks'><a href="https://in.linkedin.com/in/ijaas-ahamed" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer"><span className='btnlinks'> Linkedin |</span></a><a href="https://github.com/IjaasAhamed" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer"><span className='btnlinks'> Github |</span></a><a href="https://www.instagram.com/ijaas_ahamed___?igsh=MTYzMzM2ZHUzczFvYQ==" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer"><span className='btnlinks'> Instagram</span></a></p>
                   <div className="btn-container">
                     <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='btntrans'>CONTACT ME</ScrollLink>
                   </div>
@@ -183,10 +186,31 @@ function App() {
                 <h5 className='txtclrgrn'>INTRODUCTION</h5>
                 <Typewriter />
                 <p className='txtclr'>I've successfully completed web development, showcasing proficiency in building dynamic web applications. Eager to secure a job that provides training in technologies like HTML, CSS, JS, React JS, Node JS, Php and MySql. </p>
-                <ScrollLink to="aboutsec" spy={true} smooth={true} duration={500} className='txtclrgrn button-ul'>Learn more   <FaLongArrowAltDown /></ScrollLink>
+                <ScrollLink to="aboutsec" spy={true} smooth={true} duration={500} className='txtclrgrn button-ul m-0 px-0'>Learn more   <FaLongArrowAltDown /></ScrollLink>
               </div>
             </div>
 
+            {/* Mobile View */}
+            <div className=' col-lg-12 col-sm-12 mobhd' style={{ height: '950px' }}>
+              <div className="image-container col-lg-4 col-sm-4 colored-circle-container">
+                <span className="colored-circle"></span>
+                <Fade triggerOnce='true'><img src={myImg} alt='Ijaas Ahamed' className="image" /></Fade>
+              </div>
+              <div className='ulinee'></div>
+
+
+              <div className='center-content text-center col-lg-4 '>
+                <div className='text-left'>
+                  <h1 className='txtclr1 bigfn txtanimate smfont'>Ijaas Ahamed<span className='period'>.</span></h1>
+                  <Typewriter />
+                  <p className='txtclr1 my-4 btnlinks'><a href="https://in.linkedin.com/in/ijaas-ahamed" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer"><span className='btnlinks'> Linkedin |</span></a><a href="https://github.com/IjaasAhamed" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer"><span className='btnlinks'> Github |</span></a><a href="https://www.instagram.com/ijaas_ahamed___?igsh=MTYzMzM2ZHUzczFvYQ==" style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer"><span className='btnlinks'> Instagram</span></a></p>
+                  <div className="btn-container">
+                    <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='btntrans'>CONTACT ME</ScrollLink>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </main>
 
           <div className='aboutsec col-lg-12 col-sm-12' id="aboutsec">
@@ -220,50 +244,121 @@ function App() {
               <div className='projects-container mx-5'>
                 <div className='project col-lg-6 col-sm-12 mb-4'>
                   <div className='divpad'>
-                    <img src={quivio} alt='Project 5' className='projectImg img-fluid' />
+                    <div className="image-wrapper">
+                      <img src={quivio} alt='Project 5' className='projectImg img-fluid' />
+                      <div className="image-overlay mobviwhde"></div>
+                      <div className="btn-overlay mobviwhde">
+                        <Link to="https://e-commerce-quivio.vercel.app/" target="_blank" rel="noopener noreferrer">
+                          <button className='btntransproj'>Live Demo</button>
+                        </Link>
+                        <Link to="https://github.com/IjaasAhamed/E-commerce_Quivio" target="_blank" rel="noopener noreferrer">
+                          <button className='btntransproj mx-2'>GitHub</button>
+                        </Link>
+                      </div>
+                    </div>
+
                     <h1 className='txtclr my-4 bigfn spclfn1'>E-commerce Web Application</h1>
-                    <p className='txtclr'>This e-commerce web application serves as a comprehensive online shopping platform. It provides a seamless user experience for customers to browse, search, filter, and purchase products across various categories. The platform supports features like user authentication, wishlist, shopping cart, secure checkout, and order details.</p>
-                    {/* <Link to="/notfound">
-              <button className='btntrans mb-5'>View Project</button>
-            </Link> */}
+                    <p className='txtclr'>
+                      This e-commerce web application serves as a comprehensive online shopping platform. It provides a seamless user experience for customers to browse, search, filter, and purchase products across various categories. The platform supports features like user authentication, wishlist, shopping cart, secure checkout, and order details.
+                    </p>
+                    {/* Mobile View */}
+                    <div className="mobhd">
+                      <Link to="https://e-commerce-quivio.vercel.app/" target="_blank" rel="noopener noreferrer">
+                        <button className='btntransproj'>Live Demo</button>
+                      </Link>
+                      <Link to="https://github.com/IjaasAhamed/E-commerce_Quivio" target="_blank" rel="noopener noreferrer">
+                        <button className='btntransproj mx-2'>GitHub</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
+
                 <div className='project col-lg-6 col-sm-12 mb-4'>
                   <div className='divpad'>
-                    <img src={alif} alt='Project 4' className='projectImg img-fluid' />
+                    <div className="image-wrapper">
+                      <div className="image-overlay mobviwhde"></div>
+                      <img src={alif} alt='Project 4' className='projectImg img-fluid' />
+                      <div className="btn-overlay mobviwhde">
+                        <Link to="/notfound">
+                          <button className='btntransproj mb-5'>Live Demo</button>
+                        </Link>
+                      </div>
+                    </div>
+
                     <h1 className='txtclr my-4 bigfn spclfn1'>Catering Website</h1>
                     <p className='txtclr'>This catering website serves as a concise yet comprehensive platform, featuring essential pages such as an About Us section to learn more about our culinary journey, a Menu page showcasing our delectable offerings, a Contact Us page for inquiries and feedback, and a convenient Book Now option to seamlessly plan your events with Alif Caters.</p>
-                    {/* <Link to="/notfound">
-              <button className='btntrans mb-5'>View Project</button>
-            </Link> */}
+                    {/* Mobile View */}
+                    <div className="mobhd">
+                      <Link to="/notfound">
+                        <button className='btntransproj mb-5'>Live Demo</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
                 <div className='project col-lg-6 col-sm-12 mb-4'>
                   <div className='divpad'>
-                    <img src={Kidzee} alt='Project 3' className='projectImg img-fluid' />
+                    <div className="image-wrapper">
+                      <img src={Kidzee} alt='Project 3' className='projectImg img-fluid' />
+                      <div className="image-overlay mobviwhde"></div>
+                      <div className="btn-overlay mobviwhde">
+                        <Link to="/notfound">
+                          <button className='btntransproj mb-5'>Live Demo</button>
+                        </Link>
+                      </div>
+                    </div>
+
                     <h1 className='txtclr my-4 bigfn spclfn1'>School Website</h1>
                     <p className='txtclr'>This school website serves as a comprehensive platform, featuring essential pages such as admission for enrollment, franchise details, a convenient locate us page, Pentemind information, and a dedicated Programmes page offering a range of educational options, including Playgroup, Nursery, Kindergarten, Teacher Training Programme, and Daycare services.</p>
-                    {/* <Link to="/notfound">
-              <button className='btntrans mb-5'>View Project</button>
-            </Link> */}
+                    {/* Mobile View */}
+                    <div className="mobhd">
+                      <Link to="/notfound">
+                        <button className='btntransproj mb-5'>Live Demo</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
                 <div className='project col-lg-6 col-sm-12 mb-4'>
                   <div className='divpad'>
-                    <img src={stina} alt='Project 2' className='projectImg img-fluid' />
+                    <div className="image-wrapper">
+                      <img src={stina} alt='Project 2' className='projectImg img-fluid' />
+                      <div className="image-overlay mobviwhde"></div>
+                      <div className="btn-overlay mobviwhde">
+                        <Link to="/notFound">
+                          <button className='btntransproj mb-5'>Live Demo</button>
+                        </Link>
+                      </div>
+                    </div>
+
                     <h1 className='txtclr my-4 bigfn spclfn1'>Photography Website</h1>
                     <p className='txtclr'>This Photography website serves as a photography studio where the administrator has the ability to update the images and contents according to their preferences. It provides a platform for the studio owner to showcase their works. Users have the opportunity to view the website and express their admiration for the administrator's work. Additionally, they can easily contact the administrator for further inquiries.</p>
-                    {/* <a href="http://stinastudio.seasense.in/"><button className='btntrans mb-5'>View Project</button></a> */}
+                    {/* Mobile View */}
+                    <div className="mobhd">
+                      <Link to="/notFound">
+                        <button className='btntransproj mb-5'>Live Demo</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
                 <div className='project col-lg-6 col-sm-12 mb-4'>
                   <div className='divpad'>
-                    <img src={finance} alt='Project 1' className='projectImg img-fluid' />
+                    <div className="image-wrapper">
+                      <img src={finance} alt='Project 1' className='projectImg img-fluid' />
+                      <div className="image-overlay mobviwhde"></div>
+                      <div className="btn-overlay mobviwhde">
+                        <Link to="/notfound">
+                          <button className='btntransproj mb-5'>Live Demo</button>
+                        </Link>
+                      </div>
+                    </div>
+
                     <h1 className='txtclr my-4 bigfn spclfn1'>Finance Web Application</h1>
                     <p className='txtclr'>The Finance web application is designed for a Gold Finance Vendors' website. With this application, customers can store their loan information and generate bills for both receiving and repaying loans. A web application should be capable of performing four fundamental operations: Create, Read, Update, and Delete.</p>
-                    {/* <Link to="/notfound">
-              <button className='btntrans mb-5'>View Project</button>
-            </Link> */}
+                    {/* Mobile View */}
+                    <div className="mobhd">
+                      <Link to="/notFound">
+                        <button className='btntransproj mb-5'>Live Demo</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -341,11 +436,16 @@ function App() {
           </div>
 
           <footer>
-            <div className='container col-lg-12 col-sm-12 d-flex'>
-              <div className='col-lg-4 col-sm-4'>
-                <img src={logo} className="logofoot " alt="logo" />
+            <div className='container footerflex'>
+              <div>
+                <img src={logo} className="logofoot" alt="logo" />
               </div>
-              <div className='col-lg-8 col-sm-8 text-end logoend'>
+              <div>
+                <p className='txtclr m-0' style={{ fontSize: '0.9rem', color: 'gray' }}>
+                  &copy; {new Date().getFullYear()} Ijaas Ahamed. All Rights Reserved.
+                </p>
+              </div>
+              <div className=' logoend'>
                 <span className='social-logo-foot' onClick={handleClick}>
                   <IoMail />
                 </span>

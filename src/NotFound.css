@@ -5,7 +5,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #2d2b2b;
+    color: #ffffff;
   }
   
   .not-found-content {
@@ -16,5 +17,10 @@
     width: 200px;
     margin-top: 20px;
     filter: drop-shadow(-6px 5px 8px rgba(0, 0, 0, 0.5));
+    animation: float 3s ease-in-out infinite;
 }
-  
+  @keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}

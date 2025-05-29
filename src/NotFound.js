@@ -1,5 +1,4 @@
-import React from 'react';
-import './NotFound.css'; 
+import './NotFound.css';
 import errorImg from './img/astronaut.png';
 
 const NotFound = () => {
@@ -10,6 +9,9 @@ const NotFound = () => {
         <h1>Oops! 404 Not Found</h1>
         <p>Sorry, the page you are looking for does not exist.</p>
         <p>The project is offline, currently the project is not hosted in online.</p>
+        <a href="/">
+          <button className="btntrans mt-4">← Back to Portfolio</button>
+        </a>
       </div>
     </div>
   );
