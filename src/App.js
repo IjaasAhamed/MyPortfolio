@@ -191,7 +191,7 @@ function App() {
             </div>
 
             {/* Mobile View */}
-            <div className=' col-lg-12 col-sm-12 mobhd' style={{ height: '950px' }}>
+            <div className=' col-lg-12 col-sm-12 mobhd' style={{ height: '850px' }}>
               <div className="image-container col-lg-4 col-sm-4 colored-circle-container">
                 <span className="colored-circle"></span>
                 <Fade triggerOnce='true'><img src={myImg} alt='Ijaas Ahamed' className="image" /></Fade>

@@ -188,6 +188,7 @@ nav {
 
   .hamburger-icon {
     display: block;
+    z-index: 15;
   }
 
   .line {
@@ -264,7 +265,12 @@ nav {
   }
 
   .logoend {
-    margin-left: auto;
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-logo-foot {
+    padding: 0px !important;
   }
 
   .mgxy {
@@ -305,7 +311,7 @@ nav {
   .image-container {
     position: relative !important;
     width: 100% !important;
-    height: 590px !important;
+    height: 500px !important;
     overflow: hidden !important;
     transition: 0.4s ease !important;
   }
@@ -378,7 +384,7 @@ nav {
 
   .footerflex>* {
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 }
 
