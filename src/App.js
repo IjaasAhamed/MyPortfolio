@@ -22,12 +22,24 @@ import skillImg8 from './img/mysql.png';
 import skillImg9 from './img/typescript.png';
 import skillImg10 from './img/tailwind-css.png';
 import skillImg11 from './img/figma.png';
+import skillImg12 from './img/dart.png';
+import skillImg13 from './img/flutter.png';
+import skillImg14 from './img/webflow.png';
+import skillImg15 from './img/Power BI-skill.png';
+import skillImg16 from './img/git.png';
+import skillImg17 from './img/github.png';
 import stina from './img/stina.webp';
 import finance from './img/finance.webp';
 import Kidzee from './img/kidzee.png';
 import alif from './img/alif.webp';
 import quivio from './img/quivio.webp';
+import xchanger from './img/Xchanger.webp';
+import FlutterCertificate from './img/Flutter-Certificate.png';
+import UIUXCertificate from './img/UI UX-Certificate.png';
+import BusinessAnalysisCertificate from './img/Business Analysis-Certificate.png';
+import JavaCertificate from './img/Java-Certificate.png';
 import Typewriter from './Typewriter.js';
+import FlowingMenu from './FlowingMenu.js';
 import Loader from './Loader';
 import { Fade, Zoom } from 'react-awesome-reveal';
 
@@ -117,6 +129,13 @@ function App() {
     window.open(gmailUrl, '_blank');
   };
 
+  const FlowingMenuItems = [
+    { text: 'Flutter', image: skillImg13, link: FlutterCertificate },
+    { text: 'UI/UX Design', image: skillImg11, link: UIUXCertificate },
+    { text: 'Business Analysis', image: skillImg15, link: BusinessAnalysisCertificate },
+    { text: 'Java', image: skillImg7, link: JavaCertificate },
+  ]
+
   return (
     <div className='gfnt'>
       {loading ? (
@@ -131,6 +150,7 @@ function App() {
               <ScrollLink to="aboutsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link">About</ScrollLink>
               <ScrollLink to="projectsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" >Projects</ScrollLink>
               <ScrollLink to="skillsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link">Skills</ScrollLink>
+              <ScrollLink to="certificationssec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link">Certifications</ScrollLink>
               <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link">Contact</ScrollLink>
               <hr className="nav-line" />
               <div className='social-logo' onClick={handleClick}>
@@ -155,6 +175,7 @@ function App() {
               <ScrollLink to="aboutsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar}>About</ScrollLink>
               <ScrollLink to="projectsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar} >Projects</ScrollLink>
               <ScrollLink to="skillsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar}>Skills</ScrollLink>
+              <ScrollLink to="certificationssec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar}>Certifications</ScrollLink>
               <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='button-ul' activeClass="active-link" onClick={toggleSidebar}>Contact</ScrollLink>
               <hr className="nav-line" />
               <span className='social-logo' onClick={handleClick}><IoMail /></span>
@@ -185,7 +206,7 @@ function App() {
               <div className='col-lg-4 col-sm-4 px-5 introhde'>
                 <h5 className='txtclrgrn'>INTRODUCTION</h5>
                 <Typewriter />
-                <p className='txtclr'>I've successfully completed web development, showcasing proficiency in building dynamic web applications. Eager to secure a job that provides training in technologies like HTML, CSS, JS, React JS, Node JS, Php and MySql. </p>
+                <p className='txtclr'>I've successfully completed web development, showcasing proficiency in building dynamic web applications. Eager to secure a job that provides training in technologies like HTML, CSS, JS, React JS, Node JS, Php, MySql, Flutter and Web Design. </p>
                 <ScrollLink to="aboutsec" spy={true} smooth={true} duration={500} className='txtclrgrn button-ul m-0 px-0'>Learn more   <FaLongArrowAltDown /></ScrollLink>
               </div>
             </div>
@@ -213,35 +234,63 @@ function App() {
             </div>
           </main>
 
-          <div className='aboutsec col-lg-12 col-sm-12' id="aboutsec">
+          <section className='aboutsec col-lg-12 col-sm-12' id="aboutsec">
             <Zoom triggerOnce='true'>
               <h1 className='txtclr text-center py-5 bigfn spclfn'>About</h1>
               <div className='d-flex flex-wrap justify-content-center align-items-center'>
-                <div className='col-lg-6 col-sm-12'>
+                {/* <div className='col-lg-6 col-sm-12'>
                   <img src={abtImg} alt="About" className='abtimg img-fluid' />
-                </div>
-                <div className='col-lg-6 col-sm-12 mgxy'>
+                </div> */}
+                <div className='col-lg-10 col-sm-12 mgxy'>
                   <p className='txtclr abttxt'>
-                    I'm a self-taught Web developer with the ability to learn and collaborate in rapidly changing environments and compositions. I am very interested in web development and have learned HTML, CSS, JavaScript, Bootstrap, PHP, React.js, Node.js, MySQL. My projects boosted my interest in web development as a full-time career option.<br /><br />
-                    I am also inclined towards creative activities such as web designing and public speaking. I have always been an active student in school and college, participating in many cultural events during my school and college days.
+                    I’m a <span className='abthltxt'>self-taught Developer</span> with the ability to learn and collaborate rapidly. I’m deeply passionate about creating modern, responsive, and user-friendly web experiences.
+                    Over time, I’ve learned <span className='abthltxt'>HTML, CSS, JavaScript, Bootstrap, PHP, React.js, Node.js, MySQL, Flutter and Web Designing.</span> Each project I build teaches me something new and keeps me excited about the endless possibilities in tech.<br></br><br></br>
+                    I also enjoy the creative side of things like <span className='abthltxt'>designing beautiful interfaces</span> and bringing them to life through coding. Beyond development, I have good communication skill and creative, which has helped me become more confident and expressive.<br></br>
+                    I’ve always been an active learner and a team player, and I’m excited to keep growing in my field.
+
                   </p>
+                  <div className='py-4'>
+                    <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='btntrans me-4'>Let's Talk</ScrollLink>
+                    <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1ZfuSEQJ3tbft3e4SyjiacVVb5mB6xB1t/view?usp=sharing" className='btntrans'>
+                      Download CV
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div className='pb-5 text-center'>
-                <ScrollLink to="contactsec" spy={true} smooth={true} duration={500} className='btntrans mx-4'>Let's Talk</ScrollLink>
-                <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1WgVA8uUdG-PzWJNxKux52ibtKwhuR906/view" className='btntrans'>
-                  Download CV
-                </a>
               </div>
             </Zoom>
-          </div>
+          </section>
 
-          <div className='worksec col-lg-12 col-sm-12' id="projectsec">
+          <section className='worksec col-lg-12 col-sm-12' id="projectsec">
             <Zoom triggerOnce='true'>
               <div className='col-lg-12 col-sm-12'>
                 <h1 className='txtclr text-center py-5 bigfn spclfn'>My Recent Work</h1>
               </div>
               <div className='projects-container mx-5'>
+                <div className='project col-lg-6 col-sm-12 mb-4'>
+                  <div className='divpad'>
+                    <div className="image-wrapper">
+                      <img src={xchanger} alt='Project 6' className='projectImg img-fluid' />
+                      <div className="image-overlay mobviwhde"></div>
+                      <div className="btn-overlay mobviwhde">
+                        <Link to="https://github.com/IjaasAhamed/Xchanger-currency_converter_app" target="_blank" rel="noopener noreferrer">
+                          <button className='btntransproj mx-2'>GitHub</button>
+                        </Link>
+                      </div>
+                    </div>
+
+                    <h1 className='txtclr my-4 bigfn spclfn1'>Xchanger Mobile Application</h1>
+                    <p className='txtclr'>
+                      Xchanger is a Flutter-based learning project that I built to explore real-world app development. It’s a simple yet powerful currency converter that lets users quickly convert between different currencies with ease. The app uses live exchange rate APIs and also works offline, making it reliable anywhere. With its interactive keypad and clean, user-friendly interface, Xchanger offers a smooth and engaging experience for learning, experimenting, and everyday use.
+                    </p>
+                    {/* Mobile View */}
+                    <div className="mobhd">
+                      <Link to="https://github.com/IjaasAhamed/Xchanger-currency_converter_app" target="_blank" rel="noopener noreferrer">
+                        <button className='btntransproj mx-2'>GitHub</button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
                 <div className='project col-lg-6 col-sm-12 mb-4'>
                   <div className='divpad'>
                     <div className="image-wrapper">
@@ -363,10 +412,10 @@ function App() {
                 </div>
               </div>
             </Zoom>
-          </div>
+          </section>
 
 
-          <div className='skillsec col-lg-12 col-sm-12' id="skillsec">
+          <section className='skillsec col-lg-12 col-sm-12' id="skillsec">
             <Zoom cascade triggerOnce='true' >
               <h1 className='txtclr text-center py-5 bigfn spclfn'>Skills</h1>
               <div className='d1-flex flex-wrap skillswrapper py-4'>
@@ -415,13 +464,72 @@ function App() {
                   <h5 className='pt-2 fs-6'>MySQL</h5>
                 </div>
                 <div className='text-center txtclr col-lg-3 col-sm-3 p-4 hov'>
+                  <img src={skillImg12} alt='Dart' className='skillImg' loading='lazy' />
+                  <h5 className='pt-2 fs-6'>Dart</h5>
+                </div>
+                <div className='text-center txtclr col-lg-3 col-sm-3 p-4 hov'>
+                  <img src={skillImg13} alt='Flutter' className='skillImg' loading='lazy' />
+                  <h5 className='pt-2 fs-6'>Flutter</h5>
+                </div>
+                <div className='text-center txtclr col-lg-3 col-sm-3 p-4 hov'>
+                  <img src={skillImg16} alt='Git' className='skillImg' loading='lazy' />
+                  <h5 className='pt-2 fs-6'>Git</h5>
+                </div>
+                <div className='text-center txtclr col-lg-3 col-sm-3 p-4 hov'>
+                  <img src={skillImg17} alt='Github' className='skillImg invert' loading='lazy' />
+                  <h5 className='pt-2 fs-6'>Github</h5>
+                </div>
+                <div className='text-center txtclr col-lg-3 col-sm-3 p-4 hov'>
+                  <img src={skillImg14} alt='Webflow' className='skillImg' loading='lazy' />
+                  <h5 className='pt-2 fs-6'>Webflow</h5>
+                </div>
+                <div className='text-center txtclr col-lg-3 col-sm-3 p-4 hov'>
                   <img src={skillImg11} alt='Figma' className='skillImg' loading='lazy' />
                   <h5 className='pt-2 fs-6'>Figma</h5>
                 </div>
+                <div className='text-center txtclr col-lg-3 col-sm-3 p-4 hov'>
+                  <img src={skillImg15} alt='Power BI' className='skillImg' loading='lazy' />
+                  <h5 className='pt-2 fs-6'>Power BI</h5>
+                </div>
               </div>
             </Zoom>
-          </div>
-          <div className='contactsec col-lg-12 col-sm-12 py-5' id="contactsec">
+          </section>
+
+          <section className='certificationssec col-lg-12 col-sm-12 py-5' id="certificationssec">
+            <Fade cascade fraction={0.5} triggerOnce='true'>
+              <div className=' col-lg-12 col-sm-12'>
+                <h1 className='txtclr text-center pt-5 bigfn spclfn'>Certifications</h1>
+              </div>
+              <div className='certifiactions-container txtclr mx-5'>
+                <div className='divpad'>
+                  {/* <div className="cert-item">
+                    <h3><span>Flutter</span></h3>
+                    <img src={FlutterCertificate} alt="Flutter Certificate" />
+                  </div>
+
+                  <div className="cert-item">
+                    <h3><span>UI/UX Design</span></h3>
+                    <img src={UIUXCertificate} alt="UI/UX Design Certificate" />
+                  </div>
+
+                  <div className="cert-item">
+                    <h3><span>Business Analysis</span></h3>
+                    <img src={BusinessAnalysisCertificate} alt="Business Analysis Certificate" />
+                  </div>
+
+                  <div className="cert-item">
+                    <h3><span>Java</span></h3>
+                    <img src={JavaCertificate} alt="Java Certificate" />
+                  </div> */}
+
+                  <FlowingMenu items={FlowingMenuItems} />
+
+                </div>
+              </div>
+            </Fade>
+          </section>
+
+          <section className='contactsec col-lg-12 col-sm-12 py-5' id="contactsec">
             <Fade cascade fraction={0.5} triggerOnce='true'>
               <h1 className='txtclr text-center pt-5 bigfn spclfn'>Let's Talk</h1>
               <p className='txtclr text-center fs-5'>Feel Free to Reach Me</p>
@@ -433,7 +541,7 @@ function App() {
                 <button type='submit' className='contactbtn mb-5'>Submit</button>
               </form>
             </Fade>
-          </div>
+          </section>
 
           <footer>
             <div className='container footerflex'>

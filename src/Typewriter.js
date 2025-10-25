@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Typewriter = () => {
   const [text, setText] = useState('');
-  const fullText = "Full Stack Web Developer";
+  const fullText = "Full Stack Developer";
   const speed = 100;
 
   useEffect(() => {
