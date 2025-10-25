@@ -29,6 +29,7 @@
   cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
+  font-size: 22px !important;
   white-space: nowrap;
   font-weight: 600;
   color: #fff;
@@ -107,4 +108,24 @@
   to {
     transform: translateX(-50%);
   }
+}
+
+
+@media screen and (max-width: 768px) {
+  .menu__item-link {
+    font-size: 3vh;
+    padding: 20px 10px;
+  }
+
+  .marquee span {
+    font-size: 3vh;
+    padding: 1.5vh 1vw 0;
+  }
+
+  .marquee__img {
+    width: 150px;
+    height: 5vh;
+    margin: 1.5em 2vw;
+  }
+  
 }

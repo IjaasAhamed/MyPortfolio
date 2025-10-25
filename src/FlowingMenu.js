@@ -76,7 +76,7 @@ function MenuItem({ link, text, image }) {
   ));
 
   return (
-    <div className="menu__item" ref={itemRef}>
+    <div className="menu__item cursor-target" ref={itemRef}>
       <a className="menu__item-link" href='#' onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {text}
       </a>
